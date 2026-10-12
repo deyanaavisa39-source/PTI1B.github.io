@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="id"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261012-04-4942f96","C":{"Abril Fatface":"YACgEZbkUVE,0","Albert Sans":"YAHO2HRfeh4,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo Black":"YACgEZulLoA,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Baloo 2":"YAHO2IcQUcM,0","Barlow Condensed":"YAFdJljEuFc,0","Barlow":"YAFdJsyuOPM,1","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Cinzel":"YACgEeV8bIQ,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Figtree":"YAHO2b-mV7A,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Fredoka":"YACgEZml080,0","Georgia":"YAGzXkO0pEM,0","Hanken Grotesk":"YAHO2VB9G0I,0","Helvetica":"YAFcf7zkXN0,0","IBM Plex Mono":"YAFdJkmvhGI,0","IBM Plex Sans":"YAFdJgT0SHI,0","Impact":"YAFcfnjI7Vk,0","Instrument Sans":"YAHO2bKyaSQ,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Italiana":"YAHO2Toik_w,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Karla":"YAHO2V2NSXM,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Libre Caslon Display":"YAHO2XhLmt0,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Noto Sans JP":"YAFdJiHXlcI,0","Noto Sans KR":"YAGsojZj-RQ,0","Nunito Sans":"YAFdtQJYB9w,1","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Outfit":"YAHO2nVlg14,0","Pacifico":"YADLjORQ1u4,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAHO2gdhi18,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Public Sans":"YAFdJj8NdaU,1","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Sarabun":"YAFdJssSnME,0","Schibsted Grotesk":"YAHO2sWydRk,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Space Mono":"YADW1-vpsoc,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/486a2977e39ad380.telemetry_sdk.js" integrity="sha512-6RGhG0lZ6QriXSp9fyZ35krENb9O9A9i6UklGaEPAGRJqlg443gszr5+rhcE8tJU48EjVhUuSuTu4g7tRHuFHA=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyek PTI Tembalang</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    :root{--navy:#083b66;--blue:#126fb3;--sky:#eaf6fc;--ink:#183047;--line:#c9dfeb;--orange:#ef8354}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink)}
+    .app-shell{width:100%;min-height:100%;overflow:hidden;background:#f7fbfd;background-image:radial-gradient(ellipse at 12% 7%,transparent 0 34%,rgba(18,111,179,.08) 35% 36%,transparent 37%),radial-gradient(ellipse at 83% 20%,transparent 0 27%,rgba(18,111,179,.06) 28% 29%,transparent 30%)}
+    .brand{font-family:Fraunces,serif}.focus-ring:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.page{display:none;animation:enter .35s ease}.page.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    .nav-link{padding:.55rem .1rem;border-bottom:2px solid transparent;color:#587086;font-weight:700;font-size:.9rem}.nav-link.active,.nav-link:hover{border-color:var(--orange);color:var(--blue)}
+    .card{border:1px solid #d7e8f0;border-radius:1.25rem;background:#fff;box-shadow:0 12px 30px rgba(25,78,110,.07)}.kicker{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+    .btn-primary{background:var(--blue);color:white}.btn-soft{background:var(--sky);color:var(--navy)}.btn-primary,.btn-soft{border-radius:.8rem;padding:.75rem 1rem;font-weight:700;transition:transform .2s,filter .2s}.btn-primary:hover,.btn-soft:hover{transform:translateY(-1px);filter:brightness(.97)}
+    #map{height:330px;border-radius:1rem;z-index:1}.photo-placeholder{background:linear-gradient(135deg,#eaf6fc,#d9edf8);color:#31566e}.media-image{transition:transform .3s ease}.media-card:hover .media-image{transform:scale(1.04)}
+    .team-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;cursor:pointer}.team-card:hover,.team-card:focus-visible{transform:translateY(-5px);border-color:#8fc8e2;box-shadow:0 18px 36px rgba(25,78,110,.16)}.team-card:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.team-card img{transition:transform .35s ease}.team-card:hover img,.team-card:focus-visible img{transform:scale(1.045)}
+    .team-detail-panel{animation:team-detail-in .24s ease both}@keyframes team-detail-in{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+    .toast{opacity:0;transform:translateY(130%);transition:.25s}.toast.show{opacity:1;transform:translateY(0)}.hidden{display:none!important}
+    .modal{background:rgba(4,37,64,.72);backdrop-filter:blur(5px)}textarea{resize:vertical}.edit-group label{display:block;font-size:.82rem;font-weight:700;margin-bottom:.35rem}.edit-group input,.edit-group textarea,.edit-group select{width:100%;border:1px solid #c9dfeb;border-radius:.65rem;padding:.68rem;background:white}.edit-group textarea{min-height:92px}
+    @media(max-width:760px){.desktop-nav{display:none}.mobile-nav.open{display:flex}}@media(min-width:761px){.mobile-button,.mobile-nav{display:none}}
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/6739934784996595.data_sdk.js" type="text/javascript" integrity="sha512-aHih8MxSNczT9xRyOUq01Vmx230URMZj+8SR3fa6IZ4ScQSlODcJ0UFHLNv4yeUNpouT9N1Dq//VhTGgYsIH3g=="></script>
+  <script src="/_sdk/f35087cf86290a33.editing_sdk.js" type="text/javascript" integrity="sha512-0mbfNVTwbL0jObU6oAxxR5ze1N+oYmbuEj9U1b4T49vSBeEkZoZHWPh6ZDT5m6/VH3g3YGCJo2G9/z6qkXc02w=="></script>
+  <script src="/_sdk/056c9619db603d29.resizing_sdk.js" type="text/javascript" integrity="sha512-M+H3L4m9QQRx/o9ibl2pgmK12j+m7IzyXqQYPu51UsEwWvMSULNPd1Mc6Ou1S2PXfxZHFCe8Axqt+diUPCpRiw=="></script>
+ </head>
+ <body data-template-id="__page-root">
+  <div class="app-shell">
+   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 z-[90] rounded-lg bg-white px-4 py-2">Lewati ke konten</a>
+   <header data-template-id="site-header" class="canva-header sticky top-0 z-40 border-b border-sky-100 bg-white/95 backdrop-blur" style="background: rgb(255, 255, 255);">
+    <div class="w-full max-w-7xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
+     <button type="button" class="focus-ring flex items-center gap-3 text-left" onclick="goPage('beranda')"> <img data-template-id="undip-logo" class="canva-image h-10 w-10 shrink-0 object-contain" loading="lazy" src="canva://MAHXh6tCxgE/1" alt="Logo Universitas Diponegoro"> <span><strong data-template-id="brand-name" class="canva-text block" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Kelompok 1 B</strong><small data-template-id="brand-subtitle" class="canva-text text-slate-500" style="color: rgb(100, 116, 139); font-weight: 400; font-style: normal; font-size: 12px;">Tembalang · Proyek Akademik</small></span> </button>
+     <nav class="desktop-nav flex items-center gap-5" aria-label="Navigasi utama">
+      <button class="nav-link focus-ring active" data-page-link="beranda" onclick="goPage('beranda')">Beranda</button> <button class="nav-link focus-ring" data-page-link="media" onclick="goPage('media')">Media &amp; Dokumentasi</button> <button class="nav-link focus-ring" data-page-link="blog" onclick="goPage('blog')">Analisis Blog</button> <button class="nav-link focus-ring" data-page-link="tim" onclick="goPage('tim')">Profil Tim</button>
+     </nav>
+     <div class="flex gap-2">
+      <button data-template-id="edit-mode-button" class="canva-button focus-ring btn-soft hidden sm:inline-flex items-center gap-2" type="button" onclick="openEditor()" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700;"><i data-lucide="pencil" class="w-4"></i><span data-template-id="edit-mode-label" class="canva-text" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Mode Edit</span></button> <button class="mobile-button focus-ring rounded-lg p-2 text-[#083b66]" type="button" onclick="toggleMobile(this)" aria-label="Buka navigasi" aria-expanded="false"><i data-lucide="menu"></i></button>
+     </div>
+    </div>
+    <nav class="mobile-nav hidden flex-col gap-1 border-t bg-white px-5 py-3" aria-label="Navigasi seluler">
+     <button class="nav-link text-left focus-ring" onclick="goPage('beranda');closeMobile()">Beranda</button> <button class="nav-link text-left focus-ring" onclick="goPage('media');closeMobile()">Media &amp; Dokumentasi</button> <button class="nav-link text-left focus-ring" onclick="goPage('blog');closeMobile()">Analisis Blog</button> <button class="nav-link text-left focus-ring" onclick="goPage('tim');closeMobile()">Profil Tim</button>
+    </nav>
+   </header>
+   <main id="main-content" class="w-full">
+    <section id="beranda" class="page active">
+     <div class="w-full max-w-7xl mx-auto px-5 py-10 md:py-14">
+      <div class="grid items-center gap-8">
+       <div>
+        <p id="hero-subtitle" class="kicker"></p>
+        <h1 id="hero-title" class="brand mt-3 text-4xl leading-[1.08] text-[#083b66] md:text-6xl"></h1>
+        <p id="hero-intro" class="mt-5 max-w-2xl text-lg leading-8 text-slate-600"></p><button data-template-id="explore-button" class="canva-button focus-ring btn-primary mt-7 inline-flex items-center gap-2" type="button" onclick="document.getElementById('isu').scrollIntoView({behavior:'smooth'})" style="background: rgb(18, 111, 179); color: rgb(255, 255, 255); font-weight: 700;"><i data-lucide="compass" class="w-5"></i><span data-template-id="explore-button-label" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Mulai Menjelajahi Isu</span></button>
+       </div>
+      </div>
+      <section class="mt-16 grid gap-6 md:grid-cols-[1.05fr_.95fr]">
+       <article class="card p-7">
+        <p class="kicker">Pengantar kawasan</p>
+        <h2 id="tembalang-heading" class="brand mt-2 text-3xl text-[#083b66]"></h2>
+        <p id="tembalang-copy" class="mt-4 whitespace-pre-line leading-8 text-slate-600"></p>
+       </article>
+       <aside class="card overflow-hidden p-4">
+        <div id="map" aria-label="Peta lokasi awal Tembalang, Kota Semarang"></div>
+        <div class="mt-4 flex flex-col gap-3 sm:flex-row">
+         <div class="flex-1"><label data-template-id="map-url-label" class="canva-text mb-1 block text-sm font-bold" for="map-url" style="color: rgb(24, 48, 71); font-weight: 700; font-style: normal; font-size: 16px;">WCWM+5C7 Tembalang, Kota Semarang, Jawa Tengah</label><input id="map-url" class="focus-ring w-full rounded-lg border border-slate-300 p-3" type="text">
+         </div><button data-template-id="open-map-button" class="canva-button focus-ring btn-soft mt-auto" type="button" onclick="openMap()" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Buka di Google Maps</button>
+        </div>
+       </aside>
+      </section>
+      <section class="mt-10" aria-labelledby="video-location-heading">
+       <div class="card overflow-hidden">
+        <div class="grid items-stretch md:grid-cols-[.9fr_1.1fr]">
+         <div class="relative min-h-[280px] overflow-hidden bg-[#eaf6fc]">
+          <img data-template-id="hero-image" class="canva-image h-full min-h-[280px] w-full object-cover" loading="lazy" src="canva://MAHXy695Eko/1" alt="Peta udara area Jl. Prof. Soedarto, Jl. Tembalang Baru, Tembalang Selatan, dan Masjid Kampus Universitas Diponegoro">
+         </div>
+         <div class="flex flex-col justify-center p-7 md:p-9">
+          <p class="kicker">Lokasi dokumentasi</p>
+          <h2 id="video-location-heading" data-template-id="video-location-heading" class="canva-text brand mt-2 text-[#083b66]" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 24px;">Lokasi Pengambilan Video</h2>
+          <p data-template-id="hero-image-note" class="canva-text mt-4 leading-7 text-slate-600" style="color: rgb(24, 48, 71); font-weight: 500; font-style: normal; font-size: 16px;">Lokasi Sample Acuan : PERUMDA, Tembalang.</p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section id="isu" class="mt-14">
+       <p class="kicker">Konteks proyek</p>
+       <div class="card mt-3 p-7 md:p-9">
+        <h2 id="issue-heading" class="brand text-3xl text-[#083b66]"></h2>
+        <p id="issue-copy" class="mt-5 max-w-5xl whitespace-pre-line leading-8 text-slate-600"></p>
+       </div>
+      </section>
+     </div>
+    </section>
+    <section id="media" class="page">
+     <div class="w-full max-w-7xl mx-auto px-5 py-12">
+      <p class="kicker">Halaman 2</p>
+      <h1 id="media-heading" class="brand mt-2 text-4xl text-[#083b66]"></h1>
+      <section class="card mt-7 overflow-hidden">
+       <div class="grid md:grid-cols-[.9fr_1.1fr]">
+        <div class="p-7">
+         <p class="kicker">Video YouTube</p>
+         <h2 id="video-title" class="brand mt-2 text-2xl text-[#083b66]"></h2>
+         <p id="video-description" class="mt-3 leading-7 text-slate-600"></p><label data-template-id="youtube-url-label" class="canva-text mt-5 block text-sm font-bold" for="youtube-url" style="color: rgb(24, 48, 71); font-weight: 700; font-style: normal; font-size: 16px;">URL YouTube</label>
+         <div class="mt-1 flex gap-2"><input id="youtube-url" class="focus-ring min-w-0 flex-1 rounded-lg border border-slate-300 p-3" type="url" placeholder="https://www.youtube.com/watch?v=..."><button data-template-id="apply-video-button" class="canva-button focus-ring btn-primary" type="button" onclick="applyVideo()" style="background: rgb(18, 111, 179); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Terapkan Video</button>
+         </div><label data-template-id="video-description-label" class="canva-text mt-5 block text-sm font-bold" for="video-description-input" style="color: rgb(24, 48, 71); font-weight: 700; font-style: normal; font-size: 16px;">Deskripsi Video</label> <textarea id="video-description-input" class="focus-ring mt-1 w-full rounded-lg border border-slate-300 p-3" placeholder="Tulis deskripsi video di sini..."></textarea>
+        </div>
+        <div id="video-holder" class="flex min-h-[320px] items-center justify-center bg-[#eaf6fc] p-5"></div>
+       </div>
+      </section>
+      <section class="mt-12">
+       <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+         <p class="kicker">Galeri</p>
+         <h2 id="gallery-heading" class="brand mt-2 text-3xl text-[#083b66]"></h2>
+        </div>
+        <div id="gallery-filters" class="flex flex-wrap gap-2"></div>
+       </div>
+       <div id="photo-grid" class="mt-6 grid gap-5 sm:grid-cols-1 lg:grid-cols-2">
+        <article class="media-card card overflow-hidden" data-photo-category="Akses jalan"><img data-template-id="doc-photo-1" loading="lazy" class="canva-image media-image h-64 w-full object-cover" src="canva://MAHXylz8mcs/1" alt="Jalan permukiman dan akses warga">
+         <div class="p-4">
+          <p class="text-sm leading-6 text-slate-600">Jalan permukiman dan akses warga.</p>
+         </div>
+        </article>
+        <article class="media-card card overflow-hidden" data-photo-category="Akses jalan"><img data-template-id="doc-photo-2" loading="lazy" class="canva-image media-image h-64 w-full object-cover" src="canva://MAHXyqYFn2E/1" alt="Lingkungan jalan dan kepadatan kawasan">
+         <div class="p-4">
+          <p class="text-sm leading-6 text-slate-600">Lingkungan jalan dan kepadatan kawasan.</p>
+         </div>
+        </article>
+        <article class="media-card card overflow-hidden" data-photo-category="Kepadatan lalu lintas"><img data-template-id="doc-photo-3" loading="lazy" class="canva-image media-image h-64 w-full object-cover" src="canva://MAHXyhxNocU/1" alt="Kemacetan kendaraan">
+         <div class="p-4">
+          <p class="text-sm leading-6 text-slate-600">Kemacetan kendaraan.</p>
+         </div>
+        </article>
+        <article class="media-card card overflow-hidden" data-photo-category="Pedagang tepi jalan"><img data-template-id="doc-photo-4" loading="lazy" class="canva-image media-image h-64 w-full object-cover" src="canva://MAHXygRVElI/1" alt="Aktivitas pedagang di tepi jalan">
+         <div class="p-4">
+          <p class="text-sm leading-6 text-slate-600">Aktivitas pedagang di tepi jalan.</p>
+         </div>
+        </article>
+        <article class="media-card card overflow-hidden" data-photo-category="Parkir kendaraan"><img data-template-id="doc-photo-5" loading="lazy" class="canva-image media-image h-64 w-full object-cover" src="canva://MAHXyhslXCw/1" alt="Parkir kendaraan yang memenuhi ruang jalan">
+         <div class="p-4">
+          <p class="text-sm leading-6 text-slate-600">Parkir kendaraan yang memenuhi ruang jalan.</p>
+         </div>
+        </article>
+       </div>
+      </section>
+      <section class="card mt-12 overflow-hidden">
+       <div class="grid md:grid-cols-[1.1fr_.9fr]">
+        <div id="infographic-visual" class="photo-placeholder flex min-h-[300px] items-center justify-center p-7 text-center"></div>
+        <div class="p-7">
+         <p class="kicker">Visual pendukung</p>
+         <h2 id="infographic-title" class="brand mt-2 text-2xl text-[#083b66]"></h2>
+         <p id="infographic-caption" class="mt-3 leading-7 text-slate-600"></p><button data-template-id="change-infographic-button" class="canva-button focus-ring btn-soft mt-6" type="button" onclick="openEditor('media-editor')" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Ganti Infografis</button>
+        </div>
+       </div>
+      </section><button data-template-id="save-media-button" class="canva-button focus-ring btn-primary mt-8" type="button" onclick="saveMediaQuick()" style="background: rgb(18, 111, 179); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Simpan Perubahan Media</button>
+     </div>
+    </section>
+    <section id="blog" class="page">
+     <div class="w-full max-w-7xl mx-auto px-5 py-12">
+      <div class="grid gap-8 lg:grid-cols-[240px_1fr]">
+       <aside class="card h-fit p-5 lg:sticky lg:top-24">
+        <p class="kicker">Daftar isi</p>
+        <nav id="blog-toc" class="mt-4 flex flex-col gap-2 text-sm font-semibold text-[#126fb3]" aria-label="Daftar isi artikel"></nav><button data-template-id="edit-blog-button" class="canva-button focus-ring btn-soft mt-5 w-full" type="button" onclick="openEditor('blog-editor')" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Edit Materi Blog</button>
+       </aside>
+       <article class="card p-7 md:p-10">
+        <p class="kicker">Halaman 3 · Analisis Blog</p>
+        <h1 id="blog-title" class="brand mt-2 text-4xl leading-tight text-[#083b66]"></h1>
+        <p id="blog-opening" class="mt-6 whitespace-pre-line leading-8 text-slate-600"></p>
+        <div id="blog-sections"></div>
+        <section id="dampak-sosial" class="mt-12">
+         <h2 id="impact-heading" class="brand text-3xl text-[#083b66]"></h2>
+         <div id="impact-columns" class="mt-5 grid gap-5 md:grid-cols-2"></div>
+        </section>
+        <section id="solusi-sosial" class="mt-12">
+         <h2 id="solution-heading" class="brand text-3xl text-[#083b66]"></h2>
+         <div id="solution-cards" class="mt-5 grid gap-4 md:grid-cols-2"></div>
+        </section>
+        <section id="kesimpulan" class="mt-12 rounded-2xl bg-[#eaf6fc] p-7">
+         <h2 id="conclusion-heading" class="brand text-3xl text-[#083b66]"></h2>
+         <p id="conclusion-copy" class="mt-4 whitespace-pre-line leading-8 text-slate-700"></p>
+        </section>
+        <section class="mt-14 border-t border-sky-100 pt-10" aria-labelledby="related-articles-heading">
+         <h2 data-template-id="related-articles-heading" class="canva-text brand text-3xl text-[#083b66]" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 24px;">Artikel Terkait Isu</h2>
+         <div class="mt-5 grid gap-4 md:grid-cols-2">
+          <article data-template-id="related-article-1" class="canva-card card flex h-full flex-col p-5" style="background: rgb(255, 255, 255);">
+           <p data-template-id="related-article-1-source" class="canva-text kicker" style="color: rgb(18, 111, 179); font-weight: 700; font-style: normal; font-size: 16px;">journal.unnes.ac.id</p>
+           <h3 data-template-id="related-article-1-title" class="canva-text mt-2 font-bold text-[#083b66]" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 19px;">Implikasi Studentifikasi terhadap Kondisi Sosial Ekonomi Masyarakat di Kawasan Pendidikan Tinggi Tembalang</h3>
+           <p data-template-id="related-article-1-summary" class="canva-text mt-3 leading-7 text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Membahas perubahan kawasan setelah banyak mahasiswa tinggal di Tembalang, termasuk perubahan pekerjaan warga, penggunaan lahan, dan pola kehidupan sosial.</p><a data-template-id="related-article-1-link" class="canva-link focus-ring btn-soft mt-5 inline-flex w-fit items-center" href="https://journal.unnes.ac.id/nju/jtsp/article/view/19027" target="_blank" rel="noopener noreferrer" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Buka artikel</a> <a data-template-id="related-article-1-fallback" class="canva-link mt-2 break-all text-xs text-[#126fb3] underline" href="https://jateng.inews.id/berita/ini-titik-titik-kemacetan-akses-jalan-di-kawasan-undip-tembalang-semarang/2" target="_blank" rel="noopener noreferrer" style="color: rgb(18, 111, 179); font-weight: 400; font-style: normal; font-size: 16px;">Tautan langsung</a>
+          </article>
+          <article data-template-id="related-article-2" class="canva-card card flex h-full flex-col p-5" style="background: rgb(255, 255, 255);">
+           <p data-template-id="related-article-2-source" class="canva-text kicker" style="color: rgb(18, 111, 179); font-weight: 700; font-style: normal; font-size: 16px;">riptek.semarangkota.go.id</p>
+           <h3 data-template-id="related-article-2-title" class="canva-text mt-2 font-bold text-[#083b66]" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 19px;">Kajian Kerentanan Sosial Ekonomi Masyarakat Lokal Tembalang terkait Proses Studentifikasi</h3>
+           <p data-template-id="related-article-2-summary" class="canva-text mt-3 leading-7 text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Menjelaskan respons warga lokal terhadap perkembangan kawasan kampus, termasuk peralihan pekerjaan, usaha kos, dan mobilitas warga.</p><a data-template-id="related-article-2-link" class="canva-link focus-ring btn-soft mt-5 inline-flex w-fit items-center" href="https://riptek.semarangkota.go.id/index.php/riptek/article/view/79" target="_blank" rel="noopener noreferrer" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Buka artikel</a> <a data-template-id="related-article-2-fallback" class="canva-link mt-2 break-all text-xs text-[#126fb3] underline" href="https://www.researchgate.net/publication/326482307_Kajian_Arahan_Penyediaan_Ruang_Kota_Bagi_Pedagang_Kaki_Lima_di_Kawasan_Pendidikan_Tembalang_Kota_Semarang" target="_blank" rel="noopener noreferrer" style="color: rgb(18, 111, 179); font-weight: 400; font-style: normal; font-size: 16px;">Tautan langsung</a>
+          </article>
+          <article data-template-id="related-article-3" class="canva-card card flex h-full flex-col p-5" style="background: rgb(255, 255, 255);">
+           <p data-template-id="related-article-3-source" class="canva-text kicker" style="color: rgb(18, 111, 179); font-weight: 700; font-style: normal; font-size: 16px;">ejournal2.undip.ac.id</p>
+           <h3 data-template-id="related-article-3-title" class="canva-text mt-2 font-bold text-[#083b66]" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 19px;">Hubungan Sosial Warga Kampung Gendong dengan Perumahan Gated/Non-Gated di Tembalang</h3>
+           <p data-template-id="related-article-3-summary" class="canva-text mt-3 leading-7 text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Membahas perubahan interaksi antara warga kampung dan penghuni perumahan serta pengaruh ruang dan bentuk permukiman terhadap hubungan sosial.</p><a data-template-id="related-article-3-link" class="canva-link focus-ring btn-soft mt-5 inline-flex w-fit items-center" href="https://ejournal2.undip.ac.id/index.php/tataloka/article/view/7884" target="_blank" rel="noopener noreferrer" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Buka artikel</a> <a data-template-id="related-article-3-fallback" class="canva-link mt-2 break-all text-xs text-[#126fb3] underline" href="https://www.researchgate.net/publication/340929774_PENGGUNAAN_JALUR_PEDESTRIAN_SEBAGAI_PERWUJUDAN_KOTA_BERKELANJUTAN_STUDI_KASUS_AKSES_UTAMA_KAMPUS_UNIVERSITAS_DIPONEGORO_TEMBALANG_SEMARANG" target="_blank" rel="noopener noreferrer" style="color: rgb(18, 111, 179); font-weight: 400; font-style: normal; font-size: 16px;">Tautan langsung</a>
+          </article>
+          <article data-template-id="related-article-4" class="canva-card card flex h-full flex-col p-5" style="background: rgb(255, 255, 255);">
+           <p data-template-id="related-article-4-source" class="canva-text kicker" style="color: rgb(18, 111, 179); font-weight: 700; font-style: normal; font-size: 16px;">ejournal2.undip.ac.id</p>
+           <h3 data-template-id="related-article-4-title" class="canva-text mt-2 font-bold text-[#083b66]" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 19px;">Identifikasi Karakteristik Aktivitas PKL di Tembalang Semarang</h3>
+           <p data-template-id="related-article-4-summary" class="canva-text mt-3 leading-7 text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Mengulas aktivitas PKL sebagai ruang pertemuan mahasiswa, warga, dan pelaku usaha serta dampaknya terhadap penggunaan ruang publik.</p><a data-template-id="related-article-4-link" class="canva-link focus-ring btn-soft mt-5 inline-flex w-fit items-center" href="https://ejournal2.undip.ac.id/index.php/ruang/article/view/644/0" target="_blank" rel="noopener noreferrer" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Buka artikel</a> <a data-template-id="related-article-4-fallback" class="canva-link mt-2 break-all text-xs text-[#126fb3] underline" href="https://ejournal2.undip.ac.id/index.php/ruang/article/view/644/0" target="_blank" rel="noopener noreferrer" style="color: rgb(18, 111, 179); font-weight: 400; font-style: normal; font-size: 16px;">Tautan langsung</a>
+          </article>
+          <article data-template-id="related-article-5" class="canva-card card flex h-full flex-col p-5" style="background: rgb(255, 255, 255);">
+           <p data-template-id="related-article-5-source" class="canva-text kicker" style="color: rgb(18, 111, 179); font-weight: 700; font-style: normal; font-size: 16px;">garuda.kemdiktisaintek.go.id</p>
+           <h3 data-template-id="related-article-5-title" class="canva-text mt-2 font-bold text-[#083b66]" style="color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 19px;">Creative Hub sebagai Third Place bagi Generasi Muda di Kawasan Pendidikan Tinggi Undip Tembalang</h3>
+           <p data-template-id="related-article-5-summary" class="canva-text mt-3 leading-7 text-slate-600" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Membahas kebutuhan ruang informal untuk interaksi, kolaborasi, dan aktivitas sosial mahasiswa di Tembalang.</p><a data-template-id="related-article-5-link" class="canva-link focus-ring btn-soft mt-5 inline-flex w-fit items-center" href="https://garuda.kemdiktisaintek.go.id/documents/detail/6547075" target="_blank" rel="noopener noreferrer" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Buka artikel</a> <a data-template-id="related-article-5-fallback" class="canva-link mt-2 break-all text-xs text-[#126fb3] underline" href="https://garuda.kemdiktisaintek.go.id/documents/detail/6547075" target="_blank" rel="noopener noreferrer" style="color: rgb(18, 111, 179); font-weight: 400; font-style: normal; font-size: 16px;">Tautan langsung</a>
+          </article>
+         </div>
+        </section>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="tim" class="page">
+     <div id="team-overview" class="w-full max-w-7xl mx-auto px-5 py-12">
+      <p class="kicker">Halaman terakhir</p>
+      <h1 id="team-heading" class="brand mt-2 text-4xl text-[#083b66]"></h1>
+      <section class="mt-8">
+       <p class="kicker">Dosen Pengampu</p>
+       <div class="card mt-3 overflow-hidden">
+        <div class="p-7 md:p-8">
+         <h2 id="lecturer-name" class="brand text-3xl text-[#083b66]"></h2>
+         <p id="lecturer-degree" class="mt-2 font-semibold text-[#126fb3]"></p>
+         <p id="lecturer-course" class="mt-4 text-slate-600"></p><button data-template-id="edit-lecturer-button" class="canva-button focus-ring btn-soft mt-5" type="button" onclick="openEditor('team-editor')" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Edit Profil Dosen</button>
+        </div>
+       </div>
+      </section>
+      <section class="mt-12">
+       <p class="kicker">Anggota tim</p>
+       <div id="member-grid" class="mt-4 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-4"></div>
+       <div class="hidden" aria-hidden="true">
+        <img data-template-id="member-photo-1" class="canva-image" loading="lazy" src="canva://MAHXy9OxRCA/1" alt="Avisa Deyana mengenakan jas almamater biru dengan wajah terlihat jelas di area kampus"> <img data-template-id="member-photo-2" class="canva-image" loading="lazy" src="canva://MAHXzCBNWeE/1" alt="Atra Shelomitha Giantri mengenakan jas almamater biru di depan area kampus"> <img data-template-id="member-photo-3" class="canva-image" loading="lazy" src="canva://MAHXzJTeAOQ/1" alt="Ahmad Taura Delta Faidza tersenyum di area kampus"> <img data-template-id="member-photo-4" class="canva-image" loading="lazy" src="canva://MAHXzGWSuds/1" alt="Zlatan Ali budiyono mengenakan jas almamater biru">
+       </div>
+      </section>
+     </div>
+     <div id="profile-detail" class="hidden w-full max-w-5xl mx-auto px-5 py-12"></div>
+    </section>
+   </main>
+   <footer data-template-id="site-footer" class="canva-footer mt-8 bg-[#082f50] text-white" style="background: rgb(8, 47, 80);">
+    <div class="w-full max-w-7xl mx-auto flex flex-col justify-between gap-4 px-5 py-8 md:flex-row">
+     <div><strong id="footer-title"></strong>
+     </div><span id="footer-year" class="text-sm text-blue-100"></span>
+    </div>
+   </footer><button id="top-button" class="focus-ring hidden fixed bottom-5 right-5 z-30 rounded-full bg-[#ef8354] p-3 text-white shadow-lg" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas"><i data-lucide="arrow-up"></i></button>
+  </div>
+  <div id="lightbox" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Tampilan foto">
+   <button class="focus-ring absolute right-5 top-5 rounded-lg p-2 text-white" type="button" onclick="closeLightbox()" aria-label="Tutup"><i data-lucide="x"></i></button> <button class="focus-ring absolute left-3 rounded-full p-3 text-white md:left-8" type="button" onclick="moveLightbox(-1)" aria-label="Foto sebelumnya"><i data-lucide="chevron-left"></i></button>
+   <figure class="max-w-4xl">
+    <div id="lightbox-media"></div>
+    <figcaption id="lightbox-caption" class="mt-3 text-center text-white"></figcaption>
+   </figure><button class="focus-ring absolute right-3 rounded-full p-3 text-white md:right-8" type="button" onclick="moveLightbox(1)" aria-label="Foto berikutnya"><i data-lucide="chevron-right"></i></button>
+  </div>
+  <div id="edit-modal" class="modal hidden fixed inset-0 z-50 overflow-y-auto p-4" role="dialog" aria-modal="true" aria-labelledby="editor-heading">
+   <div class="my-5 w-full max-w-4xl mx-auto rounded-2xl bg-white p-6 shadow-2xl">
+    <div class="flex items-start justify-between gap-4">
+     <div>
+      <p class="kicker">Mode Edit</p>
+      <h2 id="editor-heading" class="brand mt-1 text-3xl text-[#083b66]">Kelola konten proyek</h2>
+     </div><button class="focus-ring rounded-lg p-2" type="button" onclick="closeEditor()" aria-label="Tutup Mode Edit"><i data-lucide="x"></i></button>
+    </div>
+    <form id="editor-form" class="mt-6" novalidate="">
+     <div class="flex flex-wrap gap-2 border-b pb-4"><button class="focus-ring rounded-lg bg-[#eaf6fc] px-3 py-2 text-sm font-bold" type="button" onclick="showEditPanel('content-editor')">Beranda</button><button class="focus-ring rounded-lg bg-[#eaf6fc] px-3 py-2 text-sm font-bold" type="button" onclick="showEditPanel('media-editor')">Media</button><button class="focus-ring rounded-lg bg-[#eaf6fc] px-3 py-2 text-sm font-bold" type="button" onclick="showEditPanel('blog-editor')">Blog</button><button class="focus-ring rounded-lg bg-[#eaf6fc] px-3 py-2 text-sm font-bold" type="button" onclick="showEditPanel('team-editor')">Tim</button>
+     </div>
+     <div id="content-editor" class="editor-panel mt-5 grid gap-4 md:grid-cols-2"></div>
+     <div id="media-editor" class="editor-panel hidden mt-5"></div>
+     <div id="blog-editor" class="editor-panel hidden mt-5"></div>
+     <div id="team-editor" class="editor-panel hidden mt-5"></div>
+     <div class="mt-7 flex justify-end gap-3"><button data-template-id="cancel-edit-button" class="canva-button focus-ring btn-soft" type="button" onclick="closeEditor()" style="background: rgb(234, 246, 252); color: rgb(8, 59, 102); font-weight: 700; font-style: normal; font-size: 16px;">Batal</button><button data-template-id="save-edit-button" class="canva-button focus-ring btn-primary" type="submit" style="background: rgb(18, 111, 179); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Simpan Perubahan</button>
+     </div>
+    </form>
+   </div>
+  </div>
+  <div id="toast" class="toast fixed bottom-5 left-1/2 z-[70] -translate-x-1/2 rounded-xl bg-[#083b66] px-5 py-3 text-white shadow-xl" role="status"></div>
+  <script>
+const defaults={
+ title:"Pengaruh Keberadaan Pendatang Terhadap Pola Interaksi Sosial Masyarakat Tembalang",
+ subtitle:"Proyek PTI",
+ intro:"Situs proyek akademik untuk memahami dinamika kehidupan sosial di kawasan pendidikan secara netral, inklusif, dan mudah dijelajahi.",
+ tembalangHeading:"Tembalang",
+ tembalangCopy:"Tembalang merupakan salah satu lokasi di Kecamatan Tembalang, bagian tenggara Kota Semarang, Provinsi Jawa Tengah. Kawasan ini dikenal sebagai salah satu pusat pendidikan di Kota Semarang karena menjadi lokasi Universitas Diponegoro (UNDIP) dan Politeknik Negeri Semarang (POLINES).\n\nTugas ini mengambil lokasi sampel di Perumda Tembalang untuk pengambilan video.",
+ issueHeading:"Isu yang Dibahas",
+ issueCopy:"Seiring dengan perkembangan kawasan pendidikan, jumlah pendatang yang tinggal di Tembalang turut meningkat. Kehadiran mereka mendorong pertumbuhan berbagai fasilitas, seperti kos-kosan, tempat makan, kafe, dan usaha lainnya.\\n\\nPerkembangan ini tidak hanya membawa perubahan pada kondisi fisik dan ekonomi kawasan, tetapi juga memengaruhi kehidupan sosial masyarakat setempat.\\nMasyarakat Tembalang yang terdiri atas penduduk lokal dan pendatang kini hidup berdampingan dengan latar belakang budaya, kebiasaan, serta gaya hidup yang beragam.\\n\\nKondisi tersebut menimbulkan dinamika dalam pola interaksi sosial, mulai dari terbentuknya hubungan dan kerja sama baru hingga munculnya tantangan dalam menjaga kedekatan antarwarga.",
+ mapUrl:"WCWM+5C7 Tembalang, Kota Semarang, Jawa Tengah", videoTitle:"Video Proyek PTI",videoDescription:"",videoUrl:"",
+ mediaHeading:"Media dan Dokumentasi",galleryHeading:"Dokumentasi Foto Isu",
+ infographicTitle:"Infografis Isu",infographicCaption:"Tambahkan keterangan infografis di sini.",
+ blogTitle:"Bagaimana Keberadaan Pendatang Memengaruhi Interaksi Sosial?",
+ blogOpening:"Keberadaan pendatang, khususnya mahasiswa, membawa perubahan terhadap pola interaksi sosial masyarakat Tembalang. Perbedaan latar belakang budaya, kebiasaan, dan gaya hidup menciptakan dinamika baru dalam kehidupan masyarakat.",
+ blogSections:[
+ ["Perubahan Pola Interaksi","Kesibukan mahasiswa dan masyarakat lokal yang berbeda dapat mengurangi intensitas interaksi. Mahasiswa cenderung beraktivitas di lingkungan kampus, sedangkan masyarakat lokal tetap menjalankan kegiatan sehari-hari di lingkungan tempat tinggalnya."],
+ ["Keberagaman Budaya","Pendatang membawa kebiasaan dan budaya yang beragam. Hal ini dapat memperluas wawasan serta meningkatkan toleransi, tetapi juga berpotensi menimbulkan kesalahpahaman akibat perbedaan kebiasaan."],
+ ["Perubahan Hubungan Antarwarga","Meningkatnya jumlah kos dan kontrakan membuat lingkungan permukiman semakin dinamis. Pergantian penghuni yang cepat dapat membatasi kedekatan antarwarga jika tidak disertai komunikasi dan partisipasi dalam kegiatan lingkungan."]
+ ],
+ impactHeading:"Dampak Keberadaan Pendatang terhadap Kehidupan Sosial",
+ positives:["Meningkatkan keberagaman sosial: Masyarakat dapat mengenal budaya dan kebiasaan baru.","Memperluas jaringan sosial: Interaksi membuka peluang pertemanan dan kerja sama ekonomi.","Meningkatkan toleransi: Masyarakat belajar menghargai perbedaan."],
+ negatives:["Berkurangnya interaksi: Kesibukan masing-masing dapat membatasi komunikasi antarwarga.","Potensi kesalahpahaman: Perbedaan kebiasaan dapat memicu konflik kecil.","Pengelompokan sosial: Pendatang cenderung bergaul dengan kelompoknya sendiri sehingga hubungan dengan warga lokal menjadi terbatas."],
+ solutionHeading:"Solusi untuk Memperkuat Interaksi Sosial",
+ solutions:["Meningkatkan partisipasi warga: Mengajak pendatang mengikuti kerja bakti dan kegiatan kemasyarakatan.","Membangun komunikasi: Mendorong komunikasi terbuka antara masyarakat lokal dan pendatang.","Mengadakan kegiatan bersama: Menyelenggarakan kegiatan sosial dan olahraga untuk mempererat hubungan.","Melibatkan perguruan tinggi: Mendorong mahasiswa berpartisipasi dalam kegiatan pengabdian masyarakat."],
+ conclusionHeading:"Kesimpulan",
+ conclusion:"Keberadaan pendatang di Tembalang membawa dampak positif dan negatif terhadap pola interaksi sosial masyarakat. Keberagaman budaya dapat memperluas wawasan dan meningkatkan toleransi, tetapi perbedaan kebiasaan serta keterbatasan komunikasi juga berpotensi menimbulkan jarak sosial.\\nOleh karena itu, diperlukan komunikasi yang baik, partisipasi dalam kegiatan masyarakat, dan sikap saling menghargai agar hubungan antara pendatang dan masyarakat lokal tetap harmonis.",
+ teamHeading:"Profil Tim",lecturer:{name:"Nofa Martina Ariani, S.T., M.T.",degree:"Gelar",course:"Mata Kuliah Proyek PTI",image:""},
+ members:[{name:"Avisa Deyana",nim:"21040126130134",role:"web developer",bio:"",contribution:"",image:""},{name:"Atra Shelomitha Giantri",nim:"21040126140143",role:"Kameramen, Editor",bio:"",contribution:"",image:""},{name:"Ahmad Taura Delta Faidza",nim:"21040126140147",role:"Peta Developer, Aktor",bio:"",contribution:"",image:""},{name:"Zlatan Ali budiyono",nim:"21040126140215",role:"Infografis, Aktor",bio:"",contribution:"",image:""}], 
+ photos:[{caption:"Akses jalan permukiman yang sempit memperlihatkan kebutuhan jalur warga yang aman dan nyaman.",alt:"Jalan permukiman dengan pengendara motor dan rumah yang berdekatan",category:"Akses jalan",url:""},{caption:"Jalan lingkungan yang tertata tetap menghadapi tantangan berbagi ruang antara hunian, pejalan kaki, dan kendaraan.",alt:"Jalan lingkungan dengan rumah dan trotoar di kawasan permukiman",category:"Akses jalan",url:""},{caption:"Kepadatan lalu lintas menunjukkan tingginya mobilitas harian dan tekanan kendaraan di ruang jalan.",alt:"Kepadatan lalu lintas dengan sepeda motor dan mobil di jalan kota",category:"Kepadatan lalu lintas",url:""},{caption:"Aktivitas pedagang di tepi jalan menghidupkan ruang publik, sekaligus membutuhkan penataan agar akses tetap aman.",alt:"Pedagang makanan dan gerobak di tepi jalan dengan kendaraan parkir",category:"Pedagang tepi jalan",url:""},{caption:"Parkir kendaraan yang memenuhi ruang jalan mempersempit area bergerak dan memengaruhi kenyamanan akses warga.",alt:"Sepeda motor terparkir memenuhi sisi jalan permukiman",category:"Parkir kendaraan",url:""}],
+ infographicUrl:"",footerTitle:"Proyek PTI · Tembalang",footerYear:"2026"
+};
+const memberPhotoRefs=["","","",""];
+let data=structuredClone(defaults), backendRecords=[], map, lightboxIndex=0, activePhotos=[], loadTimer;
+const $=id=>document.getElementById(id);
+function toast(msg){const e=$("toast");e.textContent=msg;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),3200)}
+function goPage(id){document.querySelectorAll(".page").forEach(x=>x.classList.toggle("active",x.id===id));document.querySelectorAll("[data-page-link]").forEach(x=>x.classList.toggle("active",x.dataset.pageLink===id));window.scrollTo({top:0,behavior:"smooth"});if(id==="beranda")setTimeout(()=>map?.invalidateSize(),250)}
+function toggleMobile(btn){const m=document.querySelector(".mobile-nav");m.classList.toggle("hidden");m.classList.toggle("open");btn.setAttribute("aria-expanded",String(m.classList.contains("open")))}function closeMobile(){document.querySelector(".mobile-nav").classList.add("hidden")}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function imgOrPlaceholder(url,label,cls=""){return url?`<img src="${esc(url)}" alt="" class="${cls} h-full w-full object-cover">`:`<div class="photo-placeholder flex h-full min-h-[210px] items-center justify-center p-6 text-center font-semibold"><span><i data-lucide="image-plus" class="mx-auto mb-3 w-8"></i>${esc(label)}</span></div>`}
+function render(){
+ data.tembalangCopy=data.tembalangCopy.replace(/\\n|\/n\//g, " ").replace(/\s{2,}/g, " ");data.issueCopy=data.issueCopy.replace(/\\n|\/n\//g, "\n\n").replace(/[ \t]+/g, " ").replace(/\n{3,}/g, "\n\n");
+ $("hero-subtitle").textContent=data.subtitle;$("hero-title").textContent=data.title;$("hero-intro").textContent=data.intro;$("tembalang-heading").textContent=data.tembalangHeading;$("tembalang-copy").textContent=data.tembalangCopy;$("issue-heading").textContent=data.issueHeading;$("issue-copy").textContent=data.issueCopy;
+ $("map-url").value=data.mapUrl;$("media-heading").textContent=data.mediaHeading;$("gallery-heading").textContent=data.galleryHeading;$("video-title").textContent=data.videoTitle;$("video-description").textContent=data.videoDescription;$("youtube-url").value=data.videoUrl;$("video-description-input").value=data.videoDescription;
+ $("infographic-title").textContent=data.infographicTitle;$("infographic-caption").textContent=data.infographicCaption;$("infographic-visual").innerHTML=imgOrPlaceholder(data.infographicUrl,"Tambahkan infografis di sini");
+ $("blog-title").textContent=data.blogTitle;$("blog-opening").textContent=data.blogOpening;$("impact-heading").textContent=data.impactHeading;$("solution-heading").textContent=data.solutionHeading;$("conclusion-heading").textContent=data.conclusionHeading;$("conclusion-copy").textContent=data.conclusion;
+ $("team-heading").textContent=data.teamHeading;$("lecturer-name").textContent=data.lecturer.name;$("lecturer-degree").textContent=data.lecturer.degree;$("lecturer-course").textContent=data.lecturer.course;
+ $("footer-title").textContent=data.footerTitle;$("footer-year").textContent=data.footerYear;
+ renderVideo();renderPhotos();renderBlog();renderTeam();initMap();lucide.createIcons();
+}
+function renderVideo(){const embed=youtubeEmbed(data.videoUrl);$("video-holder").innerHTML=embed?`<iframe class="h-[320px] w-full rounded-xl" src="${embed}" title="${esc(data.videoTitle)}" allowfullscreen></iframe>`:`<div class="text-center text-[#31566e]"><i data-lucide="video" class="mx-auto w-12"></i><p class="mt-3 font-semibold">Video belum ditambahkan.</p><p class="mt-1 text-sm">Masukkan URL YouTube melalui kolom yang tersedia.</p></div>`}
+function youtubeEmbed(url){try{if(!url)return"";const u=new URL(url),host=u.hostname.replace("www.","");let id="";if(host==="youtu.be")id=u.pathname.slice(1);else if(host.includes("youtube.com"))id=u.searchParams.get("v")||(u.pathname.includes("/embed/")?u.pathname.split("/embed/")[1]:"");return/^[\\w-]{6,}$/.test(id)?"https://www.youtube.com/embed/"+id:""}catch{return""}}
+function applyVideo(){const url=$("youtube-url").value.trim();if(url&&!youtubeEmbed(url))return toast("Masukkan URL YouTube yang valid.");data.videoUrl=url;data.videoDescription=$("video-description-input").value.trim();render();toast("Video diterapkan. Simpan perubahan media untuk menyimpan.");}
+function renderPhotos(){const cats=["Semua","Akses jalan","Kepadatan lalu lintas","Pedagang tepi jalan","Parkir kendaraan"];$("gallery-filters").innerHTML=cats.map(c=>`<button class="focus-ring rounded-full border border-sky-200 px-4 py-2 text-sm font-bold text-[#083b66]" type="button" onclick="filterPhotos('${esc(c)}')">${esc(c)}</button>`).join("");filterPhotos(window.currentCat||"Semua")}
+function filterPhotos(cat){window.currentCat=cat;document.querySelectorAll("#photo-grid [data-photo-category]").forEach(card=>card.classList.toggle("hidden",cat!=="Semua"&&card.dataset.photoCategory!==cat));lucide.createIcons()}
+function openLightbox(original){lightboxIndex=activePhotos.findIndex(x=>x.i===original);$("lightbox").classList.remove("hidden");showLightbox()}function showLightbox(){const p=activePhotos[lightboxIndex];$("lightbox-media").innerHTML=imgOrPlaceholder(p.url,"Tambahkan Foto "+(p.i+1));$("lightbox-caption").textContent=p.caption}function openTeamPhoto(i){const member=data.members[i];$("lightbox-media").innerHTML=`<div class="team-detail-panel w-full max-w-2xl overflow-hidden rounded-2xl bg-white text-left shadow-2xl"><img data-template-id="member-photo-${i+1}" loading="lazy" class="canva-image max-h-[62vh] w-full object-cover object-top"><div class="p-5 md:p-6"><h2 class="brand text-3xl text-[#083b66]">${esc(member.name)}</h2><p class="mt-2 font-semibold text-[#126fb3]">NIM: ${esc(member.nim)}</p><p class="mt-1 text-slate-600">${esc(member.role)}</p><button class="focus-ring btn-primary mt-5 inline-flex items-center gap-2" type="button" onclick="closeLightbox()"><i data-lucide="x" class="w-4"></i>Tutup</button></div></div>`;$("lightbox-caption").textContent="";$("lightbox").classList.remove("hidden");lucide.createIcons();setTimeout(()=>$("lightbox").querySelector("button")?.focus(),0)}function moveLightbox(n){if(!activePhotos.length)return;lightboxIndex=(lightboxIndex+n+activePhotos.length)%activePhotos.length;showLightbox()}function closeLightbox(){$("lightbox").classList.add("hidden");$("lightbox-media").innerHTML=""}
+function renderBlog(){$("blog-sections").innerHTML=data.blogSections.map((s,i)=>`<section id="blog-${i}" class="mt-10"><h2 class="brand text-3xl text-[#083b66]">${esc(s[0])}</h2><p class="mt-4 leading-8 text-slate-600">${esc(s[1])}</p></section>`).join("");$("impact-columns").innerHTML=column("Dampak Positif",data.positives,"#e6f7f1","#08775d")+column("Dampak Negatif",data.negatives,"#fff5ec","#a84b16");$("solution-cards").innerHTML=data.solutions.map((x,i)=>`<article class="card flex gap-4 p-5"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#126fb3] font-bold text-white">${i+1}</span><p class="leading-7 text-slate-700">${esc(x)}</p></article>`).join("");$("blog-toc").innerHTML=[...data.blogSections.map((x,i)=>[`blog-${i}`,x[0]]),["dampak-sosial",data.impactHeading],["solusi-sosial",data.solutionHeading],["kesimpulan",data.conclusionHeading]].map(x=>`<a class="focus-ring rounded px-1 py-1 hover:bg-sky-50" href="#${x[0]}">${esc(x[1])}</a>`).join("")}
+function column(title,list,bg,color){return`<div class="rounded-2xl p-6" style="background:${bg}"><h3 class="font-bold" style="color:${color}">${title}</h3><ul class="mt-4 space-y-3">${list.map(x=>`<li class="flex gap-2 text-sm leading-6 text-slate-700"><span style="color:${color}">●</span><span>${esc(x)}</span></li>`).join("")}</ul></div>`}
+function renderTeam(){$("member-grid").innerHTML=data.members.map((m,i)=>{const shortName=["Avisa","Atra","Delta","Zlatan"][i]||m.name.split(" ")[0];return`<button class="focus-ring team-card card overflow-hidden text-left" type="button" onclick="openTeamPhoto(${i})" aria-label="Buka detail ${esc(shortName)}"><div class="h-64 overflow-hidden"><img data-template-id="member-photo-${i+1}" loading="lazy" class="canva-image h-full w-full object-cover object-top"></div><div class="min-h-[132px] bg-white p-4"><strong class="block text-xl font-bold leading-tight text-[#083b66]">${esc(shortName)}</strong><span class="mt-2 block text-sm font-semibold text-[#126fb3]">NIM: ${esc(m.nim)}</span><span class="mt-1 block text-sm leading-5 text-slate-600">${esc(m.role)}</span></div></button>`}).join("")}
+function openProfile(i){const m=data.members[i];m.image=m.image||memberPhotoRefs[i];$("team-overview").classList.add("hidden");$("profile-detail").classList.remove("hidden");$("profile-detail").innerHTML=`<button class="focus-ring btn-soft" type="button" onclick="closeProfile()"><i data-lucide="arrow-left" class="mr-1 inline w-4"></i>Kembali ke Tim</button><article class="card mt-5 overflow-hidden md:grid md:grid-cols-[.8fr_1.2fr]"><div class="min-h-[300px]">${imgOrPlaceholder(m.image,"Tambahkan foto Anggota "+(i+1))}</div><div class="p-7"><h1 class="brand text-4xl text-[#083b66]">${esc(m.name)}</h1><p class="mt-2 text-slate-500">NIM: ${esc(m.nim)}</p><p class="mt-4 font-bold text-[#126fb3]">${esc(m.role)}</p><div class="mt-7 flex justify-between gap-3"><button class="focus-ring btn-soft" type="button" ${i===0?"disabled":""} onclick="openProfile(${i-1})">Sebelumnya</button><button class="focus-ring btn-primary" type="button" ${i===data.members.length-1?"disabled":""} onclick="openProfile(${i+1})">Berikutnya</button></div></div></article>`;lucide.createIcons();window.scrollTo({top:0,behavior:"smooth"})}function closeProfile(){$("profile-detail").classList.add("hidden");$("team-overview").classList.remove("hidden")}
+function initMap(){if(!map){map=L.map("map",{scrollWheelZoom:false}).setView([-7.0515,110.4405],13);map.attributionControl.setPrefix(false);L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'}).addTo(map);L.marker([-7.0515,110.4405]).addTo(map).bindPopup("Tembalang, Kota Semarang")}setTimeout(()=>map.invalidateSize(),100)}
+function openMap(){const q=$("map-url").value.trim()||"WCWM+5C7 Tembalang, Kota Semarang, Jawa Tengah";data.mapUrl=q;const target="https://www.google.com/maps/search/?api=1&query=WCWM%2B5C7%20Tembalang%2C%20Kota%20Semarang%2C%20Jawa%20Tengah";window.open(target,"_blank","noopener,noreferrer")}
+function input(label,key,val,type="text"){return`<div class="edit-group"><label for="${key}">${label}</label>${type==="textarea"?`<textarea id="${key}">${esc(val)}</textarea>`:`<input id="${key}" type="${type}" value="${esc(val)}">`}</div>`}
+function openEditor(panel="content-editor"){buildEditor();showEditPanel(panel);$("edit-modal").classList.remove("hidden")}function closeEditor(){$("edit-modal").classList.add("hidden")}function showEditPanel(id){document.querySelectorAll(".editor-panel").forEach(x=>x.classList.toggle("hidden",x.id!==id))}
+function buildEditor(){
+ $("content-editor").innerHTML=input("Judul proyek","e-title",data.title,"textarea")+input("Subjudul","e-subtitle",data.subtitle)+input("Pengantar beranda","e-intro",data.intro,"textarea")+input("Judul Pengertian Tembalang","e-tem-heading",data.tembalangHeading)+input("Materi Pengertian Tembalang","e-tem-copy",data.tembalangCopy,"textarea")+input("Judul isu","e-issue-heading",data.issueHeading)+input("Materi isu","e-issue-copy",data.issueCopy,"textarea")+input("Pencarian atau URL Google Maps","e-map",data.mapUrl)+input("Judul footer","e-footer-title",data.footerTitle)+input("Tahun footer","e-footer-year",data.footerYear);
+ $("media-editor").innerHTML=`<div class="grid gap-4 md:grid-cols-2">${input("Judul halaman media","e-media-heading",data.mediaHeading)}${input("Judul dokumentasi","e-gallery-heading",data.galleryHeading)}${input("Judul video","e-video-title",data.videoTitle)}${input("URL YouTube","e-video-url",data.videoUrl,"url")}${input("Deskripsi video","e-video-desc",data.videoDescription,"textarea")}${input("Judul infografis","e-info-title",data.infographicTitle)}${input("Caption infografis","e-info-caption",data.infographicCaption,"textarea")}${input("URL infografis","e-info-url",data.infographicUrl,"url")}</div><h3 class="brand mt-7 text-2xl text-[#083b66]">Lima Foto Dokumentasi</h3><div class="mt-4 grid gap-4 md:grid-cols-2">${data.photos.map((p,i)=>`<div class="rounded-xl border border-sky-100 p-4"><strong>Foto ${i+1}</strong><div class="mt-3 grid gap-3">${input("URL gambar","e-photo-url-${i}",p.url,"url")}${input("Teks alternatif","e-photo-alt-${i}",p.alt)}${input("Caption","e-photo-caption-${i}",p.caption)}${input("Kategori","e-photo-category-${i}",p.category)}</div></div>`).join("")}</div>`;
+ $("blog-editor").innerHTML=`<div class="grid gap-4">${input("Judul blog","e-blog-title",data.blogTitle)}${input("Pembuka","e-blog-opening",data.blogOpening,"textarea")}${data.blogSections.map((x,i)=>input("Heading "+(i+1),"e-bh-"+i,x[0])+input("Paragraf "+(i+1),"e-bp-"+i,x[1],"textarea")).join("")}${input("Judul dampak","e-impact-heading",data.impactHeading)}${input("Dampak positif (satu poin per baris)","e-positive",data.positives.join("\\n"),"textarea")}${input("Dampak negatif (satu poin per baris)","e-negative",data.negatives.join("\\n"),"textarea")}${input("Judul solusi","e-solution-heading",data.solutionHeading)}${input("Solusi (satu poin per baris)","e-solutions",data.solutions.join("\\n"),"textarea")}${input("Judul kesimpulan","e-conclusion-heading",data.conclusionHeading)}${input("Kesimpulan","e-conclusion",data.conclusion,"textarea")}</div>`;
+ $("team-editor").innerHTML=`<h3 class="brand text-2xl text-[#083b66]">Dosen Pengampu</h3><div class="mt-4 grid gap-4 md:grid-cols-2">${input("Nama dosen","e-lecturer-name",data.lecturer.name)}${input("Gelar","e-lecturer-degree",data.lecturer.degree)}${input("Mata kuliah","e-lecturer-course",data.lecturer.course)}${input("URL foto dosen","e-lecturer-image",data.lecturer.image,"url")}</div><h3 class="brand mt-7 text-2xl text-[#083b66]">Anggota Tim</h3>${data.members.map((m,i)=>`<div class="mt-4 rounded-xl border border-sky-100 p-4"><strong>Anggota ${i+1}</strong><div class="mt-3 grid gap-4 md:grid-cols-2">${input("Nama","e-member-name-${i}",m.name)}${input("NIM","e-member-nim-${i}",m.nim)}${input("Peran","e-member-role-${i}",m.role)}${input("URL foto","e-member-image-${i}",m.image,"url")}${input("Bio singkat","e-member-bio-${i}",m.bio,"textarea")}${input("Kontribusi proyek","e-member-contribution-${i}",m.contribution,"textarea")}</div></div>`).join("")}`;
+}
+function val(id){return $(id)?.value.trim()??""}function lines(id){return val(id).split("\\n").map(x=>x.trim()).filter(Boolean)}
+$("editor-form").addEventListener("submit",async e=>{e.preventDefault();data.title=val("e-title");data.subtitle=val("e-subtitle");data.intro=val("e-intro");data.tembalangHeading=val("e-tem-heading");data.tembalangCopy=val("e-tem-copy");data.issueHeading=val("e-issue-heading");data.issueCopy=val("e-issue-copy");data.mapUrl=val("e-map");data.footerTitle=val("e-footer-title");data.footerYear=val("e-footer-year");data.mediaHeading=val("e-media-heading");data.galleryHeading=val("e-gallery-heading");data.videoTitle=val("e-video-title");data.videoUrl=val("e-video-url");data.videoDescription=val("e-video-desc");data.infographicTitle=val("e-info-title");data.infographicCaption=val("e-info-caption");data.infographicUrl=val("e-info-url");if(data.videoUrl&&!youtubeEmbed(data.videoUrl))return toast("URL YouTube tidak valid.");data.photos.forEach((p,i)=>{p.url=val("e-photo-url-"+i);p.alt=val("e-photo-alt-"+i);p.caption=val("e-photo-caption-"+i);p.category=val("e-photo-category-"+i)||"Umum"});data.blogTitle=val("e-blog-title");data.blogOpening=val("e-blog-opening");data.blogSections.forEach((s,i)=>{s[0]=val("e-bh-"+i);s[1]=val("e-bp-"+i)});data.impactHeading=val("e-impact-heading");data.positives=lines("e-positive");data.negatives=lines("e-negative");data.solutionHeading=val("e-solution-heading");data.solutions=lines("e-solutions");data.conclusionHeading=val("e-conclusion-heading");data.conclusion=val("e-conclusion");data.lecturer={name:val("e-lecturer-name"),degree:val("e-lecturer-degree"),course:val("e-lecturer-course"),image:val("e-lecturer-image")};data.members.forEach((m,i)=>Object.assign(m,{name:val("e-member-name-"+i),nim:val("e-member-nim-"+i),role:val("e-member-role-"+i),image:val("e-member-image-"+i),bio:val("e-member-bio-"+i),contribution:val("e-member-contribution-"+i)}));render();await saveAll(e.submitter);closeEditor()});
+function pack(){return {type:"konfigurasi_situs",name:data.title,category:JSON.stringify({photos:data.photos.map(x=>x.category)}),rating:Number(data.footerYear)||2026,comment:JSON.stringify(data),created_at:new Date().toISOString(),gallery_url:JSON.stringify({photos:data.photos.map(x=>x.url),infographic:data.infographicUrl,lecturer:data.lecturer.image,members:data.members.map(x=>x.image)}),gallery_caption:JSON.stringify({photos:data.photos.map(x=>({caption:x.caption,alt:x.alt})),infographic:data.infographicCaption}),gallery_category:JSON.stringify(data.photos.map(x=>x.category)),prioritized_solutions:JSON.stringify({lecturer:data.lecturer,members:data.members}),video_url:data.videoUrl,video_title:JSON.stringify({title:data.videoTitle,description:data.videoDescription,mapUrl:data.mapUrl})}}
+async function saveAll(control){const existing=backendRecords.find(x=>x.type==="konfigurasi_situs");control.disabled=true;try{const result=existing?await window.dataSdk.update({...existing,...pack()}):await window.dataSdk.create(pack());if(result.isOk)toast("Perubahan berhasil disimpan.");else toast("Perubahan belum dapat dikonfirmasi. Muat ulang sebelum mencoba lagi.")}finally{control.disabled=false}}
+async function saveMediaQuick(){data.videoDescription=$("video-description-input").value.trim();render();await saveAll($("save-media-button"))}
+async function initialize(){loadTimer=setTimeout(()=>toast("Konten tersimpan tidak dapat dimuat. Coba muat ulang."),8000);const r=await window.dataSdk.init({onDataChanged(rows){clearTimeout(loadTimer);backendRecords=rows;const saved=rows.find(x=>x.type==="konfigurasi_situs");if(saved?.comment){try{data={...structuredClone(defaults),...JSON.parse(saved.comment)}}catch{}}const fallbackPhotos=structuredClone(defaults.photos);data.photos=fallbackPhotos.map((fallback,i)=>({...fallback,...(data.photos?.[i]||{}),url:data.photos?.[i]?.url||fallback.url}));if(!data.photos.some(p=>p.category==="Transportasi" && p.caption.startsWith("Antrean dan kepadatan"))){data.photos.push(fallbackPhotos[5])}render()}});if(!r.isOk){clearTimeout(loadTimer);toast("Penyimpanan situs belum dapat diinisialisasi.")}}
+document.addEventListener("DOMContentLoaded",()=>{render();initialize();lucide.createIcons();window.addEventListener("scroll",()=>$("top-button").classList.toggle("hidden",scrollY<400));document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLightbox();closeEditor()}})})
+</script>
+ 
+</body></html>
